@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="goodpayeur_invoice_form">
+            <field name="name">goodpayeur_invoice_form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+	    <field name="priority" >10000</field>
+            <field name="arch" type="xml">
+		<notebook position="inside">
+		    <page string="Good Payeur">
+			<button name="recup_info_good" string="Recuperer infos" type="object"/>
+			<button name="delete_good" string="Supprimer la facture chez Good Payeur" type="object"/>
+			<button name="force_good" string="Force synchronization" type="object" />
+			<group>
+			    <field name="payment_date" />
+			    <field name="etat_goodpayeur" />
+				<field name="textg" />
+			    </group>
+		    </page>
+		</notebook>
+	    </field>
+        </record>
+	
+    </data>
+</odoo>

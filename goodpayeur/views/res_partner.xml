@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+ 
+        <record model="ir.ui.view" id="goodpayeur_partner_form">
+            <field name="name">goodpayeur_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+	    <field name="priority" >10000</field>
+            <field name="arch" type="xml">
+		<field name="website" position="after">
+		    <field name="success_good" invisible="1"/>
+
+		</field>
+		<notebook position="before">
+		    <field name="score_goodpayeur" attrs="{'invisible': ['|',('sync_goodpayeur', '=', False),('company_type', '=', 'person')]}" />
+		</notebook>
+		<field name="category_id" position="after">
+		    <field name="last_goodpayeur_update"  attrs="{'invisible': ['|',('sync_goodpayeur', '=', False),'|',('company_type', '=', 'person'),('success_good','=',False)]}" />
+		    <button name="fetch_good" type="object" string="Mettre à jour les infos goodpayeur"  attrs="{'invisible': ['|',('sync_goodpayeur', '=', False),('company_type', '=', 'person')]}" />
+		</field>
+            
+		<field name="user_id" position="after">
+		    <field name="sync_goodpayeur" attrs="{'invisible': [('company_type', '=', 'person')]}" />
+		</field>
+		<notebook position="inside">
+		    <page name="goodpayeur" string="Details Good Payeur"  attrs="{'invisible': ['|',('sync_goodpayeur', '=', False),'|',('company_type', '=', 'person'),('success_good','=',False)]}">
+			<field name="details_goodpayeur" />
+		    </page>
+		</notebook>
+            </field>
+        </record>
+
+    </data>
+</odoo>

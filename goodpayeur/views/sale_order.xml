@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="goodpayeur_so_form">
+            <field name="name">goodpayeur_so_form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+	    <field name="priority" >10000</field>
+            <field name="arch" type="xml">
+		<field name="date_order" position="before">
+		    <field name="sync_goodpayeur" invisible="1" />
+		    <field name="score_goodpayeur" attrs="{'invisible': [('sync_goodpayeur', '=', False)]}" />
+		    <field name="last_goodpayeur_update"  attrs="{'invisible': [('sync_goodpayeur', '=', False)]}" />
+		    <button name="fetch_good" type="object" string="Mettre à jour les infos goodpayeur"  attrs="{'invisible': [('sync_goodpayeur', '=', False)]}" />
+		    <br />
+		</field>
+	    </field>
+        </record>
+	
+    </data>
+</odoo>
