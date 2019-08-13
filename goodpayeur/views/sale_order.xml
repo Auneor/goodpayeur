@@ -11,7 +11,7 @@
 		    <field name="sync_goodpayeur" invisible="1" />
 		    <field name="score_goodpayeur" attrs="{'invisible': [('sync_goodpayeur', '=', False)]}" />
 		    <field name="last_goodpayeur_update"  attrs="{'invisible': [('sync_goodpayeur', '=', False)]}" />
-		    <button name="fetch_good" type="object" string="Mettre à jour les infos goodpayeur"  attrs="{'invisible': [('sync_goodpayeur', '=', False)]}" />
+		    <button name="fetch_good" type="object" string="Mettre à jour les infos GOODPayeur®"  attrs="{'invisible': [('sync_goodpayeur', '=', False)]}" />
 		    <br />
 		</field>
 	    </field>

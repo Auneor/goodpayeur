@@ -8,9 +8,9 @@
 	    <field name="priority" >10000</field>
             <field name="arch" type="xml">
 		<notebook position="inside">
-		    <page string="Good Payeur">
-			<button name="recup_info_good" string="Recuperer infos" type="object"/>
-			<button name="delete_good" string="Supprimer la facture chez Good Payeur" type="object"/>
+		    <page string="GOODPayeur®">
+			<button name="recup_info_good" string="Retrieve GOODPayeur® informations" type="object"/>
+			<button name="delete_good" string="Supprimer la facture chez GOODPayeur®" type="object"/>
 			<button name="force_good" string="Force synchronization" type="object" />
 			<group>
 			    <field name="payment_date" />

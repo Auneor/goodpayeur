@@ -7,13 +7,13 @@ import datetime
 class ResPartnerGood(models.Model):
     _inherit = "res.partner"
     sync_goodpayeur = fields.Boolean(
-        "Synchronized with GOOD Payeur", copy=False, default=True
+        "Synchronized with GOODPayeur®", copy=False, default=True
     )
     last_goodpayeur_update = fields.Date(
-        "Last GOOD Payeur update", readonly="1", copy=False
+        "Last GOODPayeur® update", readonly="1", copy=False
     )
     score_goodpayeur = fields.Html(
-        "GOOD Payeur Score",
+        "GOODPayeur® Score",
         readonly="1",
         copy=False,
         help="Number between 0 and 100 that reflects the payment behaviour of a company",
@@ -46,7 +46,7 @@ class ResPartnerGood(models.Model):
             color = "#80ff80"
         res = (
             "<h2>"
-            + _("Goodpayeur Score: ")
+            + _("GOODPayeur® Score: ")
             + "<span style='background-color:"
             + color
             + "'>"
@@ -86,4 +86,9 @@ class ResPartnerGood(models.Model):
             self.success_good = False
 
             if u"error" in rep:
-                self.score_goodpayeur = rep[u"error"]
+                self.score_goodpayeur = (
+                    "<span style='background-color:yellow;'>"
+                    + _("Error: ")
+                    + rep[u"error"]
+                    + " </span>"
+                )

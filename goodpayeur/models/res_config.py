@@ -4,10 +4,10 @@ from openerp import models, fields, api
 
 class FcmResConfig(models.TransientModel):
     _inherit = "base.config.settings"
-    goodpayeur_url = fields.Char("Goodpayeur Url")
-    goodpayeur_user = fields.Char("Goodpayeur User")
-    goodpayeur_password = fields.Char("Goodpayeur Password")
-    goodpayeur_token = fields.Char("Goodpayeur Token")
+    goodpayeur_url = fields.Char("URL")
+    goodpayeur_user = fields.Char("User")
+    goodpayeur_password = fields.Char("Password")
+    goodpayeur_token = fields.Char("Token")
     # fcm_api_key = fields.Char("Server API Key")
     # fcm_project_id = fields.Char("Sender ID")
 

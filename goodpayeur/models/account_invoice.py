@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api
+from openerp import models, fields, api, _
 from .connecteur import api_goodpayeur
 import datetime
 import logging
@@ -10,13 +10,13 @@ import pprint
 
 class AccountInvoiceGood(models.Model):
     _inherit = "account.invoice"
-    textg = fields.Html(string="GOOD payeur info", copy=False, readonly=True)
+    textg = fields.Html(string="GOODPayeur® info", copy=False, readonly=True)
     score_goodpayeur = fields.Html(
-        "GOOD Payeur Score", related="partner_id.score_goodpayeur"
+        "GOODPayeur® Score", related="partner_id.score_goodpayeur"
     )
     payment_date = fields.Date("Payment Date", compute="_compute_payment_date")
     sync_goodpayeur = fields.Boolean(
-        "GOOD Payeur synchronisation", related="partner_id.sync_goodpayeur"
+        "GOODPayeur® synchronization", related="partner_id.sync_goodpayeur"
     )
     etat_goodpayeur = fields.Selection(
         [
@@ -31,10 +31,10 @@ class AccountInvoiceGood(models.Model):
         ],
         copy=False,
         readonly="1",
-        string="GOOD Payeur state",
+        string="GOODPayeur® state",
         default="nothing",
         required=True,
-        help="GOOD payeur state",
+        help="GOODPayeur® state",
     )
 
     def _get_default_goodpayeur_credentials(self):
@@ -61,6 +61,9 @@ class AccountInvoiceGood(models.Model):
         _logger.info(str(self.partner_id) + str(self.partner_id.name))
         if not siren:
             _logger.info("pas de siren")
+            self.textg = _(
+                "Erreur: Il manque le SIREN du client pour pouvoir envoyer la facture"
+            )
             return
         cred = self._get_default_goodpayeur_credentials()
         gpa = api_goodpayeur.GoodPayeurAPI(
@@ -77,8 +80,12 @@ class AccountInvoiceGood(models.Model):
                 + self.number
                 + " car la date est trop recente"
             )
-            datei -= datetime.timedelta(1)
-        #       return # TODO mettre ce code en action
+            self.textg = _(
+                "La facture sera envoyée demain car on ne peut pas envoyer une facture du jour"
+            )
+
+            #    datei -= datetime.timedelta(1)
+            return
 
         dico = {
             "identifier": siren,
@@ -98,7 +105,8 @@ class AccountInvoiceGood(models.Model):
         }
         _logger.info(dico)
         res = gpa.create_invoice(dico)
-        self.textg = pprint.pformat(res)
+        if res:
+            self.textg = pprint.pformat(res)
         if res:
             if self.etat_goodpayeur != "to_send":
                 self.etat_goodpayeur = "to_send_payed"
@@ -149,7 +157,8 @@ class AccountInvoiceGood(models.Model):
             rep = gpa.get_invoice(self.number)
             li = []
             gpa.pretty_items(li, rep)
-            self.textg = " ".join(li)
+            if rep:
+                self.textg = " ".join(li)
 
     def delete_good(self):
         cred = self._get_default_goodpayeur_credentials()
@@ -176,14 +185,14 @@ class AccountInvoiceGood(models.Model):
         for t in to_send_payed:
             _logger.info("on a trouve les factures payees " + str(t))
             t.send_payed_goodpayeur()
-            
+
     def force_good(self):
         for record in self:
-            if record.etat_goodpayeur in  ["to_send", "to_create_and_send_payed"]:
-                _logger.info("force goodpayeur sending "+str(record.id))
+            if record.etat_goodpayeur in ["to_send", "to_create_and_send_payed"]:
+                _logger.info("force goodpayeur sending " + str(record.id))
                 record.send_goodpayeur()
                 record.recup_info_good()
             elif record.etat_goodpayeur == "to_send_payed":
-                _logger.info("force goodpayeur sending "+str(record.id))
+                _logger.info("force goodpayeur sending " + str(record.id))
                 record.send_payed_goodpayeur()
                 record.recup_info_good()

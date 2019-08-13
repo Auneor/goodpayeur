@@ -2,7 +2,7 @@
 <odoo>
     <data>
 	<record model="ir.cron" id="good_proceed_invoices">
-            <field name="name">Process goodpayeur invoices</field>
+            <field name="name">Process GOODPayeur® invoices</field>
             <field name="interval_number">1</field>
             <field name="interval_type">hours</field>
             <field name="numbercall">-1</field>

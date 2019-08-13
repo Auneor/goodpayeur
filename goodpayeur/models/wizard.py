@@ -15,7 +15,7 @@ _logger = logging.getLogger(__name__)
 
 class GoodpayeurWizard(models.TransientModel):
     """
-        A wizard to manage the creation/removal of goodpayeur users.
+        A wizard to manage the creation/removal of GOODPayeur® users.
     """
 
     _name = "goodpayeur.wizard"

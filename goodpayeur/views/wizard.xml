@@ -2,7 +2,7 @@
     <data>
 	
         <act_window id="partner_wizard_action_goodpayeur"
-            name="Goodpayeur Sync"
+            name="GOODPayeur® Sync"
             src_model="res.partner"
             res_model="goodpayeur.wizard"
             view_type="form" view_mode="form"
@@ -11,13 +11,13 @@
 
         <!-- wizard view -->
         <record id="wizard_view" model="ir.ui.view">
-            <field name="name">Goodpayeur Sync</field>
+            <field name="name">GOODPayeur® Sync</field>
             <field name="model">goodpayeur.wizard</field>
             <field name="arch" type="xml">
-                <form string="Goodpayeur Sync">
+                <form string="GOODPayeur® Sync">
                     <div>
-			En cliquant sur Appliquer, vous activerez la synchronisation goodpayeur sur les contacs selectionnés.
-			A noter, qu'il faut que le siret soit renseigné pour ces clients pour que la connexion avec good payeur soit effective
+			En cliquant sur Appliquer, vous activerez la synchronisation GOODPayeur® sur les contacs selectionnés.
+			A noter, qu'il faut que le siret soit renseigné pour ces clients pour que la connexion avec GOODPayeur® soit effective
                     </div>
                     <footer>
                         <button string="Appliquer" name="action_apply" type="object" class="btn-primary"/>

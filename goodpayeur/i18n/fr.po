@@ -55,8 +55,8 @@ msgstr "Details"
 
 #. module: goodpayeur
 #: model:ir.ui.view,arch_db:goodpayeur.goodpayeur_partner_form
-msgid "Details Good Payeur"
-msgstr "Details Good Payeur"
+msgid "Details GOODPayeur®"
+msgstr "Details GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_goodpayeur_wizard_display_name
@@ -66,9 +66,9 @@ msgstr "Nom affiché"
 #. module: goodpayeur
 #: model:ir.ui.view,arch_db:goodpayeur.wizard_view
 msgid "En cliquant sur Appliquer, vous activerez la synchronisation goodpayeur sur les contacs selectionnés.\n"
-"			A noter, qu'il faut que le siret soit renseigné pour ces clients pour que la connexion avec good payeur soit effective"
+"			A noter, qu'il faut que le siret soit renseigné pour ces clients pour que la connexion avec GOODPayeur® soit effective"
 msgstr "En cliquant sur Appliquer, vous activerez la synchronisation goodpayeur sur les contacs selectionnés.\n"
-"			A noter, qu'il faut que le siret soit renseigné pour ces clients pour que la connexion avec good payeur soit effective"
+"			A noter, qu'il faut que le siret soit renseigné pour ces clients pour que la connexion avec GOODPayeur® soit effective"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_res_partner_success_good
@@ -85,75 +85,75 @@ msgstr "Forcer la synchronisation"
 #: model:ir.model.fields,field_description:goodpayeur.field_account_invoice_score_goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_res_partner_score_goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_res_users_score_goodpayeur
-msgid "GOOD Payeur Score"
-msgstr "GOOD Payeur Score"
+msgid "GOODPayeur® Score"
+msgstr "Score GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_account_invoice_etat_goodpayeur
-msgid "GOOD Payeur state"
-msgstr "GOOD Payeur state"
+msgid "GOODPayeur® state"
+msgstr "État GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_account_invoice_sync_goodpayeur
-msgid "GOOD Payeur synchronisation"
-msgstr "GOOD Payeur synchronisation"
+msgid "GOODPayeur® synchronization"
+msgstr "Synchronisation avec GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_account_invoice_textg
-msgid "GOOD payeur info"
-msgstr "GOOD payeur info"
+msgid "GOODPayeur® info"
+msgstr "Données GOODPayeur® sur la facture"
 
 #. module: goodpayeur
 #: model:ir.model.fields,help:goodpayeur.field_account_invoice_etat_goodpayeur
-msgid "GOOD payeur state"
-msgstr "GOOD payeur state"
+msgid "GOODPayeur® state"
+msgstr "État GOODPayeur® "
 
 #. module: goodpayeur
 #: model:ir.ui.view,arch_db:goodpayeur.goodpayeur_invoice_form
-msgid "Good Payeur"
-msgstr "Good Payeur"
+msgid "GOODPayeur®"
+msgstr "GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model,name:goodpayeur.model_goodpayeur_wizard
-msgid "Goodpayeur Access Management"
-msgstr "Goodpayeur Access Management"
+msgid "GOODPayeur® Access Management"
+msgstr "GOODPayeur® Access Management"
 
 #. module: goodpayeur
 #: model:ir.ui.view,arch_db:goodpayeur.inherited_view_general_configuration_goodpayeur
-msgid "Goodpayeur Integration"
-msgstr "Goodpayeur Integration"
+msgid "GOODPayeur® Integration"
+msgstr "Intégration GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_base_config_settings_goodpayeur_password
-msgid "Goodpayeur Password"
-msgstr "Goodpayeur Password"
+msgid "Password"
+msgstr "Mot de passe"
 
 #. module: goodpayeur
 #: code:addons/goodpayeur/models/res_partner.py:49
 #, python-format
-msgid "Goodpayeur Score: "
-msgstr "Score Goodpayeur: "
+msgid "GOODPayeur® Score: "
+msgstr "Score GOODPayeur®: "
 
 #. module: goodpayeur
 #: model:ir.actions.act_window,name:goodpayeur.partner_wizard_action_goodpayeur
 #: model:ir.ui.view,arch_db:goodpayeur.wizard_view
-msgid "Goodpayeur Sync"
-msgstr "Goodpayeur Sync"
+msgid "GOODPayeur® Sync"
+msgstr "GOODPayeur® Sync"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_base_config_settings_goodpayeur_token
-msgid "Goodpayeur Token"
-msgstr "Goodpayeur Token"
+msgid "Token"
+msgstr "Token"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_base_config_settings_goodpayeur_url
-msgid "Goodpayeur Url"
-msgstr "Goodpayeur Url"
+msgid "URL"
+msgstr "URL"
 
-#. module: goodpayeur
+#. module: goodpayeumr
 #: model:ir.model.fields,field_description:goodpayeur.field_base_config_settings_goodpayeur_user
-msgid "Goodpayeur User"
-msgstr "Goodpayeur User"
+msgid "User"
+msgstr "Identifiant"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_goodpayeur_wizard_id
@@ -168,8 +168,8 @@ msgstr "Facture"
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_res_partner_last_goodpayeur_update
 #: model:ir.model.fields,field_description:goodpayeur.field_res_users_last_goodpayeur_update
-msgid "Last GOOD Payeur update"
-msgstr "Dernière mise à jour Good Payeur"
+msgid "Last GOODPayeur® update"
+msgstr "Dernière mise à jour GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_goodpayeur_wizard___last_update
@@ -189,8 +189,8 @@ msgstr "Dernière mise à jour le"
 #. module: goodpayeur
 #: model:ir.ui.view,arch_db:goodpayeur.goodpayeur_partner_form
 #: model:ir.ui.view,arch_db:goodpayeur.goodpayeur_so_form
-msgid "Mettre à jour les infos goodpayeur"
-msgstr "Mettre à jour les infos goodpayeur"
+msgid "Mettre à jour les infos GOODPayeur®"
+msgstr "Mettre à jour les infos GOODPayeur®"
 
 #. module: goodpayeur
 #: selection:account.invoice,etat_goodpayeur:0
@@ -232,8 +232,8 @@ msgstr "Paiement+Facture vont être envoyés"
 
 #. module: goodpayeur
 #: model:ir.ui.view,arch_db:goodpayeur.goodpayeur_invoice_form
-msgid "Recuperer infos"
-msgstr "Recuperer infos"
+msgid "Retrieve GOODPayeur® informations"
+msgstr "Récuperer les données GOODPayeur®"
 
 #. module: goodpayeur
 #: code:addons/goodpayeur/models/res_partner.py:83
@@ -254,8 +254,8 @@ msgstr "Bon de commande"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_sale_order_score_goodpayeur
-msgid "Score Goodpayeur"
-msgstr "Score Goodpayeur"
+msgid "Score GOODPayeur®"
+msgstr "Score GOODPayeur®"
 
 #. module: goodpayeur
 #: selection:account.invoice,etat_goodpayeur:0
@@ -270,18 +270,18 @@ msgstr "Siren"
 
 #. module: goodpayeur
 #: model:ir.ui.view,arch_db:goodpayeur.goodpayeur_invoice_form
-msgid "Supprimer la facture chez Good Payeur"
-msgstr "Supprimer la facture chez Good Payeur"
+msgid "Supprimer la facture chez GOODPayeur®"
+msgstr "Supprimer la facture chez GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_sale_order_sync_goodpayeur
-msgid "Synchronisé avec Goodpayeur"
-msgstr "Synchronisé avec Goodpayeur"
+msgid "Synchronisé avec GOODPayeur®"
+msgstr "Synchronisé avec GOODPayeur®"
 
 #. module: goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_res_partner_sync_goodpayeur
 #: model:ir.model.fields,field_description:goodpayeur.field_res_users_sync_goodpayeur
-msgid "Synchronized with GOOD Payeur"
+msgid "Synchronized with GOODPayeur®"
 msgstr "Synchronisé avec GOODPayeur"
 
 #. module: goodpayeur
@@ -421,7 +421,7 @@ msgstr "Condamnation DGCCRF"
 #: code:addons/goodpayeur/models/connecteur/api_goodpayeur.py:52
 #, python-format
 msgid "has_signed_goodpayeur_charter"
-msgstr "A signé la charte goodpayeur"
+msgstr "A signé la charte GOODPayeur®"
 
 #. module: goodpayeur
 #: code:addons/goodpayeur/models/connecteur/api_goodpayeur.py:43
