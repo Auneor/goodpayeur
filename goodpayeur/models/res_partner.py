@@ -87,8 +87,8 @@ class ResPartnerGood(models.Model):
 
             if u"error" in rep:
                 self.score_goodpayeur = (
-                    "<span style='background-color:yellow;'>"
+                    "<span style='background-color:lightpink;'>"
                     + _("Error: ")
-                    + rep[u"error"]
+                    + _(rep[u"error"])
                     + " </span>"
                 )
