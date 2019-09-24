@@ -68,7 +68,6 @@ class GoodPayeurAPI:
         if isinstance(d, dict):
             r.append(blocktag[0])
             for k, v in d.iteritems():
-                #                print(k)
                 name = nametag % _(k)
                 if isinstance(v, dict) or isinstance(v, list):
                     r.append(itemtag % name)
@@ -104,23 +103,17 @@ class GoodPayeurAPI:
     def get_info(self, siren, country="FR"):
         url = self.base_url + "/public/report"
         try:
-            #            print(eval(self.token))
             client = OAuth2Session(self.client_id, token=eval(self.token))
-            # print(url)
-            # print(self.token)
             res = client.get(url, params={"identifier": siren, "country": country})
         except TokenExpiredError as e:
             self.refresh_token()
             client = OAuth2Session(self.client_id, token=eval(self.token))
             res = client.get(url)
-        print(res.status_code)
-        print(res.text)
         if res.status_code == 200:
             return True, res.json()  # request succeded
         else:
             return False, res.json()
 
-    #        return res.status_code == 200 and res.json() or None
 
     def create_invoice(self, dico):
         req = []
@@ -128,15 +121,12 @@ class GoodPayeurAPI:
             if v:
                 req.append((k, (None, (v))))
         try:
-            #           print(self.token)
             client = OAuth2Session(self.client_id, token=eval(self.token))
-            #          print(req)
             rep = client.post(url=self.base_url + "/public/depot", files=req)
         except TokenExpiredError as e:
             self.refresh_token()
             client = OAuth2Session(self.client_id, token=eval(self.token))
             rep = client.post(url=self.base_url + "/public/depot", files=req)
-        #     print(rep, rep.status_code, rep.reason)
         return rep.status_code == 200 and rep.json() or None
 
     def get_invoice(self, number):
@@ -152,7 +142,6 @@ class GoodPayeurAPI:
 
     def update_invoice(self, number, dico):
         url = self.base_url + "/public/depot/" + number
-        #        print(url)
         try:
             client = OAuth2Session(self.client_id, token=eval(self.token))
             rep = client.put(url, params=dico)
@@ -160,8 +149,6 @@ class GoodPayeurAPI:
             self.refresh_token()
             client = OAuth2Session(self.client_id, token=eval(self.token))
             rep = client.put(url, params=dico)
-        #       print("update done")
-        #       print(rep, rep.status_code, rep.reason)
         return rep.status_code == 200
 
     def delete_invoice(self, number):
@@ -173,5 +160,4 @@ class GoodPayeurAPI:
             self.refresh_token()
             client = OAuth2Session(self.client_id, token=eval(self.token))
             rep = client.delete(url)
-        #    print(rep, rep.status_code, rep.reason, rep.text)
         return rep.status_code == 200 and rep.json() or None
